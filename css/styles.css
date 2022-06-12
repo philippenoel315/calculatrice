@@ -24,3 +24,34 @@ main
     min-height: 400px;
     background-color: #ccc;
 }
+
+.chiffre{
+    background-color: gray;
+    color: white;
+
+}
+
+.equation{
+    background-color: lightgreen;
+}
+
+.autre{
+
+}
+
+#calculatrice{
+    
+    
+}
+
+#cadran{
+    height:50px;
+    text-align: right;
+    
+}
+
+button{
+    height: 50px;
+    border-radius: 30px;
+    
+}

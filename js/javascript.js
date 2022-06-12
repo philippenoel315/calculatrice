@@ -8,8 +8,50 @@
 /* #################################################################################################*/
 
 
+let cadran = document.getElementById("cadran");
+function clickBouton(e)
+{
+    let bouton = e.target.id;
+    
+    if(bouton=="AC")
+    {
+        cadran.innerHTML = "";
+    }
+    else if(bouton=="="){
+    egalClick();
+    }
+    else if(e.target.classList[0]=="chiffre")
+    let element = document.createElement('span');
+    element.innerText = bouton;
+    cadran.appendChild(element);
+    }
+    
+    console.log("Le bouton " + bouton + " a été cliqué");
 
+    return bouton;
+}
 
+function egalClick()
+{
+    //Compile l'équation qui a été écrite
+
+    let cadran = document.getElementById("cadran");
+
+    let equation = cadran.getElementsByTagName('span');
+    let concatenation="";
+    for(const entree of equation)
+    {
+        concatenation  =concatenation+entree.innerText;
+        
+    }
+    console.log(eval(concatenation));
+    cadran.innerText = eval(concatenation);
+}
+
+function acClick()
+{
+
+}
 
 
 /**
@@ -17,10 +59,12 @@
  */
  function initialisation() {
    
-    alert("La page web est chargée, les scripts peuvent commencer");
+    
 
     // Appel de la fonction utilitaire ajouterALaPage lorsqu'on veut ajouter un paragraphe à la suite du <body>
-    ajouterALaPage("Ceci est un paragraphe ajouté avec la fonction ajouterALaPage");  
+    let boutons = document.getElementsByTagName("button");
+    for(const leBouton of boutons)
+    leBouton.addEventListener("click",clickBouton,false); 
 }
 
 /**
