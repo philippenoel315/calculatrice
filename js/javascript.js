@@ -8,28 +8,36 @@
 /* #################################################################################################*/
 
 
-let cadran = document.getElementById("cadran");
+
 function clickBouton(e)
-{
+{   
+    const cadran = document.getElementById("cadran");
     let bouton = e.target.id;
+    switch (bouton){
+        case "=":
+        cadran.innerText = eval(cadran.innerText);
+            break;
+        case "AC":
+            cadran.innerText = "";
+            break;
+        case "neg":
+        cadran.innerText = "-" + cadran.innerText;
+            break;            
+        case "pourcent":
+            cadran.innerText = eval(cadran.innerText)/100; 
+            break;
+        default:
+            
+            cadran.innerText = cadran.innerText + bouton;
+              
+    }   
     
-    if(bouton=="AC")
-    {
-        cadran.innerHTML = "";
-    }
-    else if(bouton=="="){
-    egalClick();
-    }
-    else if(e.target.classList[0]=="chiffre")
-    let element = document.createElement('span');
-    element.innerText = bouton;
-    cadran.appendChild(element);
-    }
-    
+        
     console.log("Le bouton " + bouton + " a été cliqué");
 
     return bouton;
 }
+
 
 function egalClick()
 {
