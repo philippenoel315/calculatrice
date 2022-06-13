@@ -39,35 +39,10 @@ function clickBouton(e)
 }
 
 
-function egalClick()
-{
-    //Compile l'équation qui a été écrite
-
-    let cadran = document.getElementById("cadran");
-
-    let equation = cadran.getElementsByTagName('span');
-    let concatenation="";
-    for(const entree of equation)
-    {
-        concatenation  =concatenation+entree.innerText;
-        
-    }
-    console.log(eval(concatenation));
-    cadran.innerText = eval(concatenation);
-}
-
-function acClick()
-{
-
-}
-
-
 /**
  * Cette fonction est rattachée à l'événement "Load". C'est la première fonction qui va s'executer lorsque la page sera entièrement chargée.
  */
- function initialisation() {
-   
-    
+ function initialisation() {  
 
     // Appel de la fonction utilitaire ajouterALaPage lorsqu'on veut ajouter un paragraphe à la suite du <body>
     let boutons = document.getElementsByTagName("button");
